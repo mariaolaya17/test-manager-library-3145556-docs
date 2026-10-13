@@ -21,7 +21,7 @@ Each task is complete when its **evidence** exists and can be executed (Art. XII
 | T-15 | Cover adapter (disk) | T-08 | `app/Adapters/Outbound/Storage/DiskCoverStorage.php` | **done** |
 | T-16 | HTTP adapter: routes from `api-contract.md`, unique error body, role authorization | T-10, T-11, T-14, T-15 | `routes/api.php`, `bootstrap/app.php` error handlers, `app/Adapters/Inbound/Http/Middleware/` | **done** |
 | T-17 | Composition + startup (initial admin from env) | T-16 | `app/Bootstrap/PortBindingsServiceProvider.php`, `app/Console/Commands/BootstrapAdmin.php` | **done** |
-| T-18 | Push to DB the **domain-only** invariants: `ck_book_total_positive`, `ck_user_role` | T-12 | Pending — needs additional migration | **pending** |
+| T-18 | Push to DB the **domain-only** invariants: `ck_book_total_positive`, `ck_user_role` | T-12 | `database/migrations/0003_add_domain_constraints.php` in `api` | **done** |
 | T-19 | Architecture tests (Articles I, II, III) | T-17 | `tests/Architecture/LayerTest.php` | **done** |
 | T-20 | `infra`: `docker compose up` starts empty engine, API, frontend | T-17 | `infra/docker-compose.yml` | **done** |
 | T-21 | `tool`: demo seeder **via API** (>= 40 books, 10 members, 15 loans, 3 overdue) | T-17 | `tool/seed/seed.mjs`, `tool/seed/data/books.json`, `members.json` | **done** |
@@ -30,8 +30,7 @@ Each task is complete when its **evidence** exists and can be executed (Art. XII
 
 ## Summary
 
-- **Done**: T-01 through T-17, T-19, T-20, T-21, T-22, T-23 (22 tasks)
-- **Pending**: T-18 (additional CHECK constraints migration)
+- **Done**: T-01 through T-23 (all 23 tasks)
 
 ## Definition of done
 
